@@ -16,9 +16,9 @@ resetBtn.addEventListener('click', () => {
 });
 
 newGridBtn.addEventListener('click', () => {
-    let userInput = prompt("Input a number (1-64):")
+    let userInput = prompt("Enter a number (1-64):")
     while (userInput < 1 || userInput > 64) {
-        userInput = prompt("Input a number (1-64):");
+        userInput = prompt("Invalid input! Enter a number (1-64):");
     }
     makeGrid(userInput);
 })
@@ -29,6 +29,15 @@ function clearGrid() {
         gridRow.remove();
     })
 }
+
+function getRandomColor() {
+    var letters = '0123456789ABCDEF';
+    var color = '#';
+    for (var i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+  }
 
 function makeGrid(numRow) {
     clearGrid();
@@ -41,7 +50,7 @@ function makeGrid(numRow) {
             gridRow.appendChild(gridCell);
             gridCell.className = 'cell'
             gridCell.addEventListener('mouseenter', () => {
-                gridCell.style.backgroundColor = 'pink';
+                gridCell.style.backgroundColor = getRandomColor();
             });
         }
     }
