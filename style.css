@@ -1,21 +1,46 @@
 body {
     display:flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+#buttons {   
+    display: flex;
+    width: 350px;
+    justify-content:space-evenly;
+    margin-bottom: 20px;
+}
+
+button {
+    width: 150px;
+    background-color: rgb(242, 255, 156);
+    border-radius: 10px;
+    font-size: 20px;
+    font-family:'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+
+#header {
+    font-size:50px;
+    font-family: papyrus;
+    color:rgb(90, 214, 199);
+    margin-bottom: 10px;
+    margin-top: 10px;
 }
 
 #container {
     display: flex;
     flex-direction: column;
-    width: 600px;
-    height: 600px;
+    width: 470px;
+    height: 470px;
     border: 1px solid black;
 }
 
 .row {
     display: flex;
     flex-direction: row;
-    width: 600px;
+    width:inherit;
     height:inherit;
 }
 
